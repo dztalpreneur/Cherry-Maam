@@ -21,7 +21,7 @@ const globalAgent = new EnvHttpProxyAgent({
 setGlobalDispatcher(globalAgent);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 // Shared Gemini Client
 // We must set the 'User-Agent' header to 'aistudio-build' in httpOptions for telemetry.
